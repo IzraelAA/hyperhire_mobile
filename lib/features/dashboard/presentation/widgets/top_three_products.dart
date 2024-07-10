@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:hyperhire/features/dashboard/presentation/widgets/title_section.dart';
 import 'package:hyperhire/utils/app_color.dart';
 
 class TopThreeProducts extends StatelessWidget {
@@ -13,18 +14,9 @@ class TopThreeProducts extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            "제일 핫한 리뷰를 만나보세요",
-            style: TextStyle(
-              fontSize: 12,
-              fontWeight: FontWeight.w400,
-              color: Color(0xff616161),
-            ),
-          ),
-          const SizedBox(height: 8),
-          const Text(
-            '리뷰️ 랭킹⭐ top 3',
-            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+          const TitleSection(
+            title: "제일 핫한 리뷰를 만나보세요",
+            subtitle: '리뷰️ 랭킹⭐ top 3',
           ),
           const SizedBox(height: 26),
           productCard(
@@ -92,11 +84,10 @@ class TopThreeProducts extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Container(
-          padding: EdgeInsets.all(6),
+          padding: const EdgeInsets.all(6),
           decoration: BoxDecoration(
-            border: Border.all(color: AppColor.liteGray),
-            borderRadius: BorderRadius.circular(4)
-          ),
+              border: Border.all(color: AppColor.liteGray),
+              borderRadius: BorderRadius.circular(4)),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

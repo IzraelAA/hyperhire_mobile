@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:hyperhire/features/dashboard/presentation/widgets/animated_banner.dart';
+import 'package:hyperhire/features/dashboard/presentation/widgets/footer.dart';
 import 'package:hyperhire/features/dashboard/presentation/widgets/top_three_products.dart';
+import 'package:hyperhire/features/dashboard/presentation/widgets/top_user_list.dart';
 import 'package:hyperhire/utils/app_color.dart';
 
 class HomePage extends StatelessWidget {
@@ -19,7 +21,23 @@ class HomePage extends StatelessWidget {
             height: 2,
           ),
           const AnimatedBanner(),
-          const TopThreeProducts()
+          const SizedBox(
+            height: 14,
+          ),
+          const TopThreeProducts(),
+          const SizedBox(
+            height: 14,
+          ),
+          Container(
+            color: AppColor.background,
+            height: 14,
+            width: double.infinity,
+          ),
+          const SizedBox(
+            height: 14,
+          ),
+          TopUsersList(),
+          const Footer(),
         ],
       ),
     );
@@ -43,7 +61,7 @@ class HomePage extends StatelessWidget {
       child: TextField(
         decoration: InputDecoration(
           hintText: '검색어를 입력하세요',
-          suffixIcon:  Icon(
+          suffixIcon: Icon(
             Icons.search,
             color: AppColor.iris100,
           ),
@@ -54,7 +72,6 @@ class HomePage extends StatelessWidget {
           filled: true,
           fillColor: Colors.white,
           contentPadding: const EdgeInsets.only(left: 10),
-
         ),
         onChanged: (query) {},
       ),
