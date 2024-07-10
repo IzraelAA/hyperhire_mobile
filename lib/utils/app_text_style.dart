@@ -2,32 +2,32 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class AppTextStyle {
-  // DM Sans styles
-  TextStyle dmSansBody({Color? color}) => GoogleFonts.dmSans(
+  // Noto Sans KR styles
+  TextStyle notoSansBody({Color? color,double? fontSize}) => GoogleFonts.notoSansKr(
     textStyle: TextStyle(
       color: color,
-      fontSize: 12, // Ubah ukuran font menjadi 12
+      fontSize: fontSize ??12, // Ubah ukuran font menjadi 12
       fontWeight: FontWeight.w400,
     ),
   );
 
-  TextStyle dmSansHeading({Color? color}) => GoogleFonts.dmSans(
+  TextStyle notoSansHeading({Color? color}) => GoogleFonts.notoSansKr(
     textStyle: TextStyle(
       color: color,
       fontSize: 18, // Ubah ukuran font menjadi 18
-      fontWeight: FontWeight.bold,
+      fontWeight: FontWeight.w500,
     ),
   );
 
-  TextStyle dmSansTitle({Color? color}) => GoogleFonts.dmSans(
+  TextStyle notoSansTitle({Color? color}) => GoogleFonts.notoSansKr(
     textStyle: TextStyle(
       color: color,
-      fontSize: 16, // Ubah ukuran font menjadi 16
-      fontWeight: FontWeight.w600,
+      fontSize: 14, // Ubah ukuran font menjadi 16
+      fontWeight: FontWeight.w700,
     ),
   );
 
-  TextStyle dmSansSubtitle({Color? color}) => GoogleFonts.dmSans(
+  TextStyle notoSansSubtitle({Color? color}) => GoogleFonts.notoSansKr(
     textStyle: TextStyle(
       color: color,
       fontSize: 14, // Ubah ukuran font menjadi 14
@@ -35,17 +35,16 @@ class AppTextStyle {
     ),
   );
 
-  TextStyle dmSansDescription({Color? color}) => GoogleFonts.dmSans(
+  TextStyle notoSansDescription({Color? color}) => GoogleFonts.notoSansKr(
     textStyle: TextStyle(
       color: color,
       fontSize: 10, // Ubah ukuran font menjadi 10
-      fontWeight: FontWeight.w300,
-      fontStyle: FontStyle.italic,
+      fontWeight: FontWeight.w700,
     ),
   );
 
-  // Inter styles
-  TextStyle interBody({Color? color}) => GoogleFonts.inter(
+  // Roboto
+  TextStyle robotoBody({Color? color}) => GoogleFonts.roboto(
     textStyle: TextStyle(
       color: color,
       fontSize: 12, // Ubah ukuran font menjadi 12
@@ -53,15 +52,15 @@ class AppTextStyle {
     ),
   );
 
-  TextStyle interHeading({Color? color}) => GoogleFonts.inter(
+  TextStyle robotoHeading({Color? color}) => GoogleFonts.roboto(
     textStyle: TextStyle(
       color: color,
-      fontSize: 18, // Ubah ukuran font menjadi 18
-      fontWeight: FontWeight.bold,
+      fontSize: 24, // Ubah ukuran font menjadi 18
+      fontWeight: FontWeight.w500,
     ),
   );
 
-  TextStyle interTitle({Color? color}) => GoogleFonts.inter(
+  TextStyle robotoTitle({Color? color}) => GoogleFonts.roboto(
     textStyle: TextStyle(
       color: color,
       fontSize: 16, // Ubah ukuran font menjadi 16
@@ -69,7 +68,7 @@ class AppTextStyle {
     ),
   );
 
-  TextStyle interSubtitle({Color? color}) => GoogleFonts.inter(
+  TextStyle robotoSubtitle({Color? color}) => GoogleFonts.roboto(
     textStyle: TextStyle(
       color: color,
       fontSize: 14, // Ubah ukuran font menjadi 14
@@ -77,12 +76,11 @@ class AppTextStyle {
     ),
   );
 
-  TextStyle interDescription({Color? color}) => GoogleFonts.inter(
+  TextStyle robotoDescription({Color? color}) => GoogleFonts.roboto(
     textStyle: TextStyle(
       color: color,
-      fontSize: 10, // Ubah ukuran font menjadi 10
-      fontWeight: FontWeight.w300,
-      fontStyle: FontStyle.italic,
+      fontSize: 7, // Ubah ukuran font menjadi 10
+      fontWeight: FontWeight.w700,
     ),
   );
 }

@@ -44,9 +44,9 @@ class AppTextFormField extends StatelessWidget {
       style: textStyle ?? GoogleFonts.inter(),
       decoration: InputDecoration(
         labelText: labelText,
-        labelStyle: AppTextStyle().dmSansSubtitle(),
+        labelStyle: AppTextStyle().notoSansSubtitle(),
         hintText: hintText,
-        hintStyle: AppTextStyle().dmSansSubtitle(),
+        hintStyle: AppTextStyle().notoSansSubtitle(),
         border: OutlineInputBorder(),
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,

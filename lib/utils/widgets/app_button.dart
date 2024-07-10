@@ -36,9 +36,9 @@ class AppButton {
         padding: const EdgeInsets.symmetric(vertical: 9.5),
         decoration: BoxDecoration(
             borderRadius: radius ?? BorderRadius.all(Radius.circular(4)),
-            color: color ?? AppColor.primaryColor,
+            color: color ?? AppColor.black,
             border: Border.all(
-              color: borderColor ?? AppColor.primaryColor,
+              color: borderColor ?? AppColor.black,
               width: 1,
             )),
         child: loading
@@ -46,7 +46,7 @@ class AppButton {
                 height: textSize * 1.5,
                 width: textSize * 1.5,
                 child: CircularProgressIndicator(
-                  color: textColor ?? AppColor.whiteColor,
+                  color: textColor ?? AppColor.white,
                 ),
               )
             : Row(
@@ -58,8 +58,8 @@ class AppButton {
                   ],
                   Text(
                     text,
-                    style: AppTextStyle().dmSansTitle(
-                      color: textColor ?? AppColor.whiteColor,
+                    style: AppTextStyle().notoSansTitle(
+                      color: textColor ?? AppColor.white,
                     ),
                   ),
                   if (rightWidget != null) ...[
