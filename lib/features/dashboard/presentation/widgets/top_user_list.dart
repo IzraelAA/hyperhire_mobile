@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hyperhire/features/dashboard/presentation/widgets/title_section.dart';
 import 'package:hyperhire/features/profile/presentation/pages/profile_page.dart';
+import 'package:hyperhire/utils/app_color.dart';
 
 class TopUsersList extends StatelessWidget {
   // List nama pengguna
@@ -17,7 +19,7 @@ class TopUsersList extends StatelessWidget {
     'Name10',
   ];
 
-   TopUsersList({super.key});
+  TopUsersList({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,30 +36,55 @@ class TopUsersList extends StatelessWidget {
           const SizedBox(height: 26),
           Container(
             width: double.infinity,
-            height: 100,
+            height: 120,
             child: ListView.builder(
               scrollDirection: Axis.horizontal,
               itemCount: topUsers.length,
               itemBuilder: (BuildContext context, int index) {
                 return GestureDetector(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfilePage()));
-
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const ProfilePage()));
                   },
                   child: Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        CircleAvatar(
-                          radius: 31, // Radius gambar lingkaran
-                          backgroundImage: AssetImage(
-                              'assets/images/user_${index + 1}.png'), // Sesuaikan dengan nama file gambar
-                        ),
-                        const SizedBox(height: 4),
-                        Text(
-                          topUsers[index],
-                          style: const TextStyle(fontSize: 12),
-                        ),
+                        index == 0
+                            ? SvgPicture.asset(
+                                "assets/svg/crown.svg",
+                              )
+                            : const SizedBox(
+                                height: 15,
+                              ),
+                        Column(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(
+                                  color: index == 0
+                                      ? AppColor.yellowStar
+                                      : AppColor.white,
+                                  width: 4,
+                                ),
+                              ),
+                              child: CircleAvatar(
+                                radius: 31,
+                                backgroundImage: AssetImage(
+                                    'assets/images/user_${index + 1}.png'),
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              topUsers[index],
+                              style: const TextStyle(fontSize: 12),
+                            ),
+                          ],
+                        )
                       ],
                     ),
                   ),

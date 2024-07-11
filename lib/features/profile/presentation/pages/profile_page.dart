@@ -132,6 +132,35 @@ class ProfilePage extends StatelessWidget {
               color: AppColor.liteGray,
               height: 1,
             ),
+            Container(
+              padding: EdgeInsets.all(16),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Container(
+                    width: 104,
+                    height: 104,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(4),
+                      image: (DecorationImage(
+                        image: AssetImage("assets/images/product_review_1.png"),
+                      )),
+                    ),
+                  ),
+                  Container(
+                    width: 187,
+                    height: 43,
+                    child: Text(
+                      'AMD 라이젠 5 5600X 버미어 정품 멀티팩',
+                      style: AppTextStyle().notoSansTitle(),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            Divider(
+              height: 1,
+            )
           ],
         ),
       ),

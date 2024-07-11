@@ -53,7 +53,10 @@ class HomePage extends StatelessWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(8.0),
         gradient: const LinearGradient(
-          colors: [Color(0xFF3C41BF), Color(0xFF74FBDE)],
+          colors: [
+            Color(0xFF3C41BF),
+            Color(0xFF74FBDE),
+          ],
           begin: Alignment.bottomRight,
           end: Alignment.topLeft,
         ),
