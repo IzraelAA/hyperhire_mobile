@@ -2,8 +2,6 @@
 
 Welcome to HyperHire, a Flutter project designed to streamline the hiring process with a focus on efficiency and user experience.
 
-![HyperHire Logo](assets/images/logo.jpeg)
-
 ## Getting Started
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
@@ -27,13 +25,13 @@ https://github.com/IzraelAA/hyperhire/app-release.apk
 
 Here are some examples of the pages in the app:
 
-![Page 1](assets/images/ios1.jpeg)
+![Page 1](images/ios1.jpeg)
 
-![Page 2](assets/images/ios2.jpeg)
+![Page 2](images/ios2.jpeg)
 
-![Page 3](assets/images/ios3.jpeg)
+![Page 3](images/ios3.jpeg)
 
-![Page 4](assets/images/ios4.jpeg)
+![Page 4](images/ios4.jpeg)
 
 ### Installation
 
