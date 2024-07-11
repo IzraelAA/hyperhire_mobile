@@ -4,6 +4,7 @@ import 'package:hyperhire/features/dashboard/presentation/widgets/footer.dart';
 import 'package:hyperhire/features/dashboard/presentation/widgets/top_three_products.dart';
 import 'package:hyperhire/features/dashboard/presentation/widgets/top_user_list.dart';
 import 'package:hyperhire/utils/app_color.dart';
+import 'package:hyperhire/utils/app_text_style.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -12,7 +13,12 @@ class HomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('LOGO'),
+        centerTitle: false,
+        title: Text('LOGO',
+            style: AppTextStyle().notoSansHeading(
+              color: AppColor.iris100,
+              fontSize: 24,
+            )),
       ),
       body: ListView(
         children: [
