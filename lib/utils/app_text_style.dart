@@ -21,10 +21,10 @@ class AppTextStyle {
         ),
       );
 
-  TextStyle notoSansTitle({Color? color}) => GoogleFonts.notoSansKr(
+  TextStyle notoSansTitle({Color? color, double? fontSize}) => GoogleFonts.notoSansKr(
     textStyle: TextStyle(
       color: color,
-      fontSize: 14, // Ubah ukuran font menjadi 16
+      fontSize: fontSize ?? 14, // Ubah ukuran font menjadi 16
       fontWeight: FontWeight.w700,
     ),
   );
