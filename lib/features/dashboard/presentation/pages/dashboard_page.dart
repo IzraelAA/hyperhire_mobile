@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hyperhire/features/dashboard/presentation/pages/home_page.dart';
 import 'package:hyperhire/utils/app_color.dart';
 
@@ -32,32 +33,22 @@ class _DashboardPageState extends State<DashboardPage> {
       bottomNavigationBar: BottomNavigationBar(
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.home,
-              color: AppColor.black,
+            icon: SvgPicture.asset(
+              'assets/svg/home.svg',
             ),
-            label: 'Home',
+            label: '홈',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.place,
-              color: AppColor.black,
-            ),
-            label: 'My Trip',
+            icon: SvgPicture.asset('assets/svg/category_default.svg'),
+            label: '카테고리',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.place,
-              color: AppColor.black,
-            ),
-            label: 'My Trip',
+            icon: SvgPicture.asset('assets/svg/community_default.svg'),
+            label: '커뮤니티',
           ),
           BottomNavigationBarItem(
-            icon: Icon(
-              Icons.account_circle_sharp,
-              color: AppColor.black,
-            ),
-            label: 'My Profile',
+            icon: SvgPicture.asset('assets/svg/mypage_default.svg'),
+            label: '마이페이지',
           ),
         ],
         currentIndex: _selectedIndex,
