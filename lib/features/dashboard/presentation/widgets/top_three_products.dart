@@ -15,9 +15,16 @@ class TopThreeProducts extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const TitleSection(
-            title: "제일 핫한 리뷰를 만나보세요",
-            subtitle: '리뷰️ 랭킹⭐ top 3',
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const TitleSection(
+                title: "제일 핫한 리뷰를 만나보세요",
+                subtitle: '리뷰️ 랭킹⭐ top 3',
+              ),
+              SvgPicture.asset('assets/svg/arrow_forward.svg')
+            ],
           ),
           const SizedBox(height: 26),
           productCard(
