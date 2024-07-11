@@ -9,6 +9,7 @@ class AppColor {
   static Color greyReview = const Color(0xFFA0A0A0);
   static Color greyProfile = const Color(0xFF616161);
   static Color demiGray = const Color(0xFF868686);
+  static Color textGray = const Color(0xFFC4C4C4);
   static Color liteGray = const Color(0xFFF0F0F0);
   static Color greyReviewDuplicate = const Color(0xFFA0A0A0);
   static Color midGray = const Color(0xFFD9D9D9);

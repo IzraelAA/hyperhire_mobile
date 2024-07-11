@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:hyperhire/features/dashboard/presentation/widgets/title_section.dart';
 import 'package:hyperhire/utils/app_color.dart';
+import 'package:hyperhire/utils/app_text_style.dart';
 
 class TopThreeProducts extends StatelessWidget {
   const TopThreeProducts({super.key});
@@ -29,7 +30,7 @@ class TopThreeProducts extends StatelessWidget {
             ],
             rating: 4.89,
             reviewsCount: 216,
-            feature: '편리성',
+            features: ['편리성'],
             image: 'assets/images/product_1.png',
           ),
           const SizedBox(height: 26),
@@ -46,7 +47,7 @@ class TopThreeProducts extends StatelessWidget {
             ],
             rating: 4.36,
             reviewsCount: 136,
-            feature: '고화질',
+            features: ['LG전자', '화질 좋음'],
             image: 'assets/images/product_2.png',
           ),
           const SizedBox(height: 26),
@@ -63,7 +64,7 @@ class TopThreeProducts extends StatelessWidget {
             ],
             rating: 3.98,
             reviewsCount: 98,
-            feature: '가성비',
+            features: ['가성비', '반응속도 빠름'],
             image: 'assets/images/product_3.png',
           ),
         ],
@@ -77,28 +78,38 @@ class TopThreeProducts extends StatelessWidget {
     required List<String> review,
     required double rating,
     required int reviewsCount,
-    required String feature,
+    required List<String> features,
     required String image,
   }) {
     return Row(
-      crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
         Container(
           padding: const EdgeInsets.all(6),
           decoration: BoxDecoration(
-              border: Border.all(color: AppColor.liteGray),
-              borderRadius: BorderRadius.circular(4)),
+            border: Border.all(color: AppColor.liteGray),
+            borderRadius: BorderRadius.circular(4),
+          ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Stack(
+                alignment: Alignment.center,
                 children: [
-                  SvgPicture.asset("assets/svg/crown.svg"),
-                  Center(
-                      child: Text(
+                  const SizedBox(
+                    width: 20,
+                    height: 15,
+                  ),
+                  SvgPicture.asset(
+                    "assets/svg/crown.svg",
+                    color: getCrownColor(number),
+                  ),
+                  Text(
                     number.toString(),
-                    style: const TextStyle(color: Colors.white),
-                  ))
+                    textAlign: TextAlign.center,
+                    style:
+                        AppTextStyle().robotoDescription(color: AppColor.white),
+                  ),
                 ],
               ),
               Container(
@@ -113,6 +124,9 @@ class TopThreeProducts extends StatelessWidget {
                   ),
                 ),
               ),
+              const SizedBox(
+                height: 6,
+              )
             ],
           ),
         ),
@@ -131,7 +145,7 @@ class TopThreeProducts extends StatelessWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              const SizedBox(height: 8),
+              const SizedBox(height: 6),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: review
@@ -149,20 +163,73 @@ class TopThreeProducts extends StatelessWidget {
                         ))
                     .toList(),
               ),
-              const SizedBox(height: 8),
-              Text(
-                '평점: $rating ($reviewsCount개 리뷰)',
-                style: const TextStyle(fontSize: 14),
+              const SizedBox(height: 6),
+              Row(
+                children: [
+                  SvgPicture.asset(
+                    'assets/svg/star.svg',
+                    height: 10,
+                    width: 10,
+                  ),
+                  const SizedBox(
+                    width: 3,
+                  ),
+                  Text(
+                    '$rating',
+                    style: AppTextStyle().notoSansTitle(
+                      color: AppColor.yellowStar,
+                    ),
+                  ),
+                  const SizedBox(
+                    width: 2,
+                  ),
+                  Text(
+                    '($reviewsCount)',
+                    style:
+                        AppTextStyle().notoSansTitle(color: AppColor.textGray),
+                  ),
+                ],
               ),
-              const SizedBox(height: 8),
-              Text(
-                '특징: $feature',
-                style: const TextStyle(fontSize: 14),
+              const SizedBox(height: 6),
+              Wrap(
+                spacing: 6.0,
+                runSpacing: 6.0,
+                children: features
+                    .map(
+                      (feature) => Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(6),
+                          color: AppColor.liteGray,
+                        ),
+                        padding: const EdgeInsets.all(6),
+                        child: Text(
+                          feature,
+                          style: AppTextStyle().notoSansBody(
+                            color: AppColor.demiGray,
+                            fontSize: 11,
+                          ),
+                        ),
+                      ),
+                    )
+                    .toList(),
               ),
             ],
           ),
         ),
       ],
     );
+  }
+
+  Color getCrownColor(int number) {
+    switch (number) {
+      case 1:
+        return AppColor.yellowStar;
+      case 2:
+        return AppColor.silverCrown;
+      case 3:
+        return AppColor.bronzeCrown;
+      default:
+        return Colors.black; // Default color if needed
+    }
   }
 }

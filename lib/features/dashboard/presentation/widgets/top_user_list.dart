@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hyperhire/features/dashboard/presentation/widgets/title_section.dart';
+import 'package:hyperhire/features/profile/presentation/pages/profile_page.dart';
 
 class TopUsersList extends StatelessWidget {
   // List nama pengguna
@@ -38,21 +39,27 @@ class TopUsersList extends StatelessWidget {
               scrollDirection: Axis.horizontal,
               itemCount: topUsers.length,
               itemBuilder: (BuildContext context, int index) {
-                return Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                  child: Column(
-                    children: [
-                      CircleAvatar(
-                        radius: 31, // Radius gambar lingkaran
-                        backgroundImage: AssetImage(
-                            'assets/images/user_${index + 1}.png'), // Sesuaikan dengan nama file gambar
-                      ),
-                      SizedBox(height: 4),
-                      Text(
-                        topUsers[index],
-                        style: TextStyle(fontSize: 12),
-                      ),
-                    ],
+                return GestureDetector(
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context) => const ProfilePage()));
+
+                  },
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                    child: Column(
+                      children: [
+                        CircleAvatar(
+                          radius: 31, // Radius gambar lingkaran
+                          backgroundImage: AssetImage(
+                              'assets/images/user_${index + 1}.png'), // Sesuaikan dengan nama file gambar
+                        ),
+                        const SizedBox(height: 4),
+                        Text(
+                          topUsers[index],
+                          style: const TextStyle(fontSize: 12),
+                        ),
+                      ],
+                    ),
                   ),
                 );
               },

@@ -3,21 +3,23 @@ import 'package:google_fonts/google_fonts.dart';
 
 class AppTextStyle {
   // Noto Sans KR styles
-  TextStyle notoSansBody({Color? color,double? fontSize}) => GoogleFonts.notoSansKr(
-    textStyle: TextStyle(
-      color: color,
-      fontSize: fontSize ??12, // Ubah ukuran font menjadi 12
-      fontWeight: FontWeight.w400,
-    ),
-  );
+  TextStyle notoSansBody({Color? color, double? fontSize}) =>
+      GoogleFonts.notoSansKr(
+        textStyle: TextStyle(
+          color: color,
+          fontSize: fontSize ?? 12, // Ubah ukuran font menjadi 12
+          fontWeight: FontWeight.w400,
+        ),
+      );
 
-  TextStyle notoSansHeading({Color? color}) => GoogleFonts.notoSansKr(
-    textStyle: TextStyle(
-      color: color,
-      fontSize: 18, // Ubah ukuran font menjadi 18
-      fontWeight: FontWeight.w500,
-    ),
-  );
+  TextStyle notoSansHeading({Color? color, double? fontSize}) =>
+      GoogleFonts.notoSansKr(
+        textStyle: TextStyle(
+          color: color,
+          fontSize: fontSize ?? 18, // Ubah ukuran font menjadi 18
+          fontWeight: FontWeight.w500,
+        ),
+      );
 
   TextStyle notoSansTitle({Color? color}) => GoogleFonts.notoSansKr(
     textStyle: TextStyle(
